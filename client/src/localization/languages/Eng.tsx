@@ -5,7 +5,7 @@ export default {
   com_ui_new_chat: 'New chat',
   com_ui_example_quantum_computing: 'Explain quantum computing in simple terms',
   com_ui_example_10_year_old_b_day: 'Got any creative ideas for a 10 year old\'s birthday?',
-  com_ui_example_http_in_js: 'How do I make an HTTP request in Javascript?',
+  com_ui_example_http_in_js: 'Tips for boosting energy efficiency in a three-person household\'s home',
   com_ui_capabilities: 'Capabilities',
   com_ui_capability_remember: 'Remembers what user said earlier in the conversation',
   com_ui_capability_correction: 'Allows user to provide follow-up corrections',

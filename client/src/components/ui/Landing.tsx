@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import useDocumentTitle from '~/hooks/useDocumentTitle';
 import SunIcon from '../svg/SunIcon';
 import LightningIcon from '../svg/LightningIcon';
 import CautionIcon from '../svg/CautionIcon';
+import myVideo from '../videos/robot01.mp4';
 import store from '~/store';
 import { useLocalize } from '~/hooks';
 import { useGetStartupConfig } from 'librechat-data-provider';
 
 export default function Landing() {
+
+  // MODIFICATION: Add a full-screen div that appears when the page loads and disappears when the button is clicked
+  const [showIntro, setShowIntro] = useState(true);
+  const hideIntroHandler = () => {
+    setShowIntro(false);
+  };  
+
+
   const { data: config } = useGetStartupConfig();
   const setText = useSetRecoilState(store.text);
   const conversation = useRecoilValue(store.conversation);
@@ -27,6 +36,39 @@ export default function Landing() {
 
   return (
     <div className="flex h-full flex-col items-center overflow-y-auto pt-0 text-sm dark:bg-gray-800">
+      {showIntro && (
+        <>
+          {/* Video background */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            className="absolute top-0 left-0 w-full h-full object-cover z-103"
+            src={myVideo}
+          ></video>
+
+          {/* Black overlay with 50% opacity */}
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-105"></div> 
+        </>
+      )}  
+      {
+        showIntro && (
+            <div
+                className={`fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center z-110 ${!showIntro ? "fade-out" : ""}`}
+                >
+                <h1 className="text-center text-5xl leading-[6rem] mb-8 cta neon">Want to chat with an AI model?</h1>
+                {/* <button
+                    onClick={hideIntroHandler}
+                    className="bg-blue-500 text-white text-5xl py-[3rem] px-[5rem] pb-[3.5rem] rounded"
+                >
+                    Try Now
+                </button> */}
+                <button
+                    onClick={hideIntroHandler}
+                    class="glowing-btn">TRY NOW</button>
+            </div>
+        )
+      }     
       <div className="w-full px-6 text-gray-800 dark:text-gray-100 md:flex md:max-w-2xl md:flex-col lg:max-w-3xl">
         <h1
           id="landing-title"
