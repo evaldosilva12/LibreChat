@@ -77,8 +77,11 @@ export default function Messages({ isSearchView = false }) {
       className="flex-1 overflow-y-auto pt-0"
       ref={scrollableRef}
       onScroll={debouncedHandleScroll}
+      style={{
+        marginTop: '110px',
+      }}  
     >
-      <div className="dark:gpt-dark-gray mb-32 h-auto md:mb-48" ref={screenshotTargetRef}>
+      <div className="dark:gpt-dark-gray mb-32 h-auto md:mb-48 mb-22rem-modified" ref={screenshotTargetRef}>
         <div className="dark:gpt-dark-gray flex h-auto flex-col items-center text-sm">
           <MessageHeader isSearchView={isSearchView} />
           {_messagesTree === null ? (

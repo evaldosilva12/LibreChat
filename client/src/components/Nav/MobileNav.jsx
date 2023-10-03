@@ -10,7 +10,7 @@ export default function MobileNav({ setNavVisible }) {
   const localize = useLocalize();
 
   return (
-    <div className="fixed left-0 right-0 top-0 z-10 flex items-center border-b border-white/20 bg-gray-800 pl-1 pt-1 text-gray-200 sm:pl-3 md:hidden">
+    <div className="fixed left-0 right-0 top-0 z-10 flex items-center border-b border-white/20 bg-gray-800 pl-1 pt-1 text-gray-200 sm:pl-3 mt-63-modified">
       <button
         type="button"
         className="-ml-0.5 -mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md hover:text-gray-900 focus:outline-none focus:ring-0 focus:ring-inset focus:ring-white dark:hover:text-white"
@@ -35,7 +35,7 @@ export default function MobileNav({ setNavVisible }) {
         </svg>
       </button>
       <h1 className="flex-1 text-center text-base font-normal">
-        {title || localize('com_ui_new_chat')}
+        {/* {title || localize('com_ui_new_chat')} */}
       </h1>
       <button type="button" className="px-3" onClick={() => newConversation()}>
         <svg

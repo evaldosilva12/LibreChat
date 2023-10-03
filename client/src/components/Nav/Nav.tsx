@@ -163,7 +163,7 @@ export default function Nav({ navVisible, setNavVisible }) {
   return (
     <>
       <div
-        className="nav active dark max-w-[320px] flex-shrink-0 overflow-x-hidden bg-gray-900 md:max-w-[260px]"
+        className="nav active dark max-w-[320px] flex-shrink-0 overflow-x-hidden bg-gray-900 md:max-w-[260px] mt-60-modified"
         style={{
           width: navVisible ? navWidth : '0px',
           visibility: navVisible ? 'visible' : 'hidden',
@@ -218,7 +218,7 @@ export default function Nav({ navVisible, setNavVisible }) {
         </div>
       </div>
       {!navVisible && (
-        <div className="absolute left-2 top-2 z-10 hidden md:inline-block">
+        <div className="absolute left-2 top-2 z-10 hidden">
           <button
             type="button"
             className="nav-open-button flex h-11 cursor-pointer items-center gap-3 rounded-md border border-black/10 bg-white p-3 text-sm text-black transition-colors duration-200 hover:bg-gray-50 dark:border-white/20 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"

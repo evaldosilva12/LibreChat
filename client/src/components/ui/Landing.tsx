@@ -4,7 +4,9 @@ import useDocumentTitle from '~/hooks/useDocumentTitle';
 import SunIcon from '../svg/SunIcon';
 import LightningIcon from '../svg/LightningIcon';
 import CautionIcon from '../svg/CautionIcon';
-import myVideo from '../videos/robot01.mp4';
+import myVideo from '../videos/AdobeStock_347596561.mp4';
+import myLogo from '../videos/logo.png';
+
 import store from '~/store';
 import { useLocalize } from '~/hooks';
 import { useGetStartupConfig } from 'librechat-data-provider';
@@ -16,7 +18,6 @@ export default function Landing() {
   const hideIntroHandler = () => {
     setShowIntro(false);
   };  
-
 
   const { data: config } = useGetStartupConfig();
   const setText = useSetRecoilState(store.text);
@@ -35,7 +36,9 @@ export default function Landing() {
   };
 
   return (
-    <div className="flex h-full flex-col items-center overflow-y-auto pt-0 text-sm dark:bg-gray-800">
+    // <div className="flex h-full flex-col items-center overflow-y-auto pt-0 text-sm dark:bg-gray-800 flexvcenter">
+    <div className="flex h-full flex-col items-center overflow-y-auto pt-0 text-sm dark:bg-gray-800 flexvcenter"
+    onClick={hideIntroHandler}>
       {showIntro && (
         <>
           {/* Video background */}
@@ -54,15 +57,12 @@ export default function Landing() {
       {
         showIntro && (
             <div
-                className={`fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center z-110 ${!showIntro ? "fade-out" : ""}`}
+                className={`fixed top-0 left-0 w-full h-full flex flex-col justify-around items-center z-110 ${!showIntro ? "fade-out" : ""}`}
                 >
+                <a href="/chat/new" className="initiallogo">
+                  <img src={myLogo} alt="908 AI" className="logoinital" />
+                </a>
                 <h1 className="text-center text-5xl leading-[6rem] mb-8 cta neon">Want to chat with an AI model?</h1>
-                {/* <button
-                    onClick={hideIntroHandler}
-                    className="bg-blue-500 text-white text-5xl py-[3rem] px-[5rem] pb-[3.5rem] rounded"
-                >
-                    Try Now
-                </button> */}
                 <button
                     onClick={hideIntroHandler}
                     class="glowing-btn">TRY NOW</button>
@@ -73,9 +73,9 @@ export default function Landing() {
         <h1
           id="landing-title"
           data-testid="landing-title"
-          className="mb-10 ml-auto mr-auto mt-6 flex items-center justify-center gap-2 text-center text-4xl font-semibold sm:mb-16 md:mt-[10vh]"
+          className="mb-10 ml-auto mr-auto mt-6 flex items-center justify-center gap-2 text-center text-4xl font-semibold sm:mb-16 md:mt-[-4vh]"
         >
-          {config?.appTitle || 'LibreChat'}
+          Explore an AI Model
         </h1>
         <div className="items-start gap-3.5 text-center md:flex">
           <div className="mb-8 flex flex-1 flex-col gap-3.5 md:mb-auto">

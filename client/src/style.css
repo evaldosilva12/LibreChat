@@ -144,6 +144,21 @@
   src: url("$fonts/Exo2-ExtraBold.ttf") format("ttf")
 }
 
+@font-face {
+  font-display: swap;
+  font-family: FuturaBook;
+  font-style: normal;
+  font-weight: 400;
+  src: url("$fonts/FuturaBook.ttf") format("ttf")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: HelveticaNeue;
+  font-style: normal;
+  font-weight: 400;
+  src: url("$fonts/HelveticaNeueLTPro-Bd.otf") format("otf")
+}
 /* * {
   box-sizing: border-box;
   outline: 1px solid limegreen !important;
@@ -1569,23 +1584,31 @@ button.scroll-convo {
 /* DIV */
 .fade-out {
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s;
+  transition: opacity 0.5s ease;
+}
+
+.fixed {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.initiallogo {
+  margin-top: -20rem;
 }
 
 .cta {
   text-align: center;
-  font-size: 6rem;
-  line-height: 6.2rem;
-  /* margin-bottom: 30rem; */
+  font-size: 10rem;
+  line-height: 9.2rem;
   font-weight: 800;
-  color: white;
   padding: 0 0.5em;
+  margin-top: -22rem;
 }
 
 .neon {
   color: #fff;
   text-shadow: 0 0 5px #9bacb5, 0 0 10px #0e384d, 0 0 20px #0e384d, 0 0 40px #000;
+  margin-top: -22rem;
   /* text-shadow:0 0 5px #9bacb5, 0 0 10px #0e384d, 0 0 20px #0e384d, 0 0 40px #0ff, 0 0 80px #0ff, 0 0 90px #0ff, 0 0 100px #0ff, 0 0 150px #0ff; */
 }
 
@@ -1790,4 +1813,79 @@ button.scroll-convo {
 
 .z-110 {
   z-index: 110;
+}
+
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #181818;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+}
+
+.logoinital {
+  max-height: 50px;
+}
+
+.logo {
+  max-height: 43px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #181818;
+  margin-top: 30px;
+  margin-bottom: -10px;
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.75);  
+}
+
+.footer-text {
+  font-size: larger;
+}
+
+.footer-text, .footer-website {
+  color: #fff;
+}
+
+.qrcode {
+  height: 100px; /* Adjust as needed */
+}
+
+.mt-63-modified {
+  margin-top: 60px;
+}
+
+.mt-60-modified {
+  margin-top: 60px;
+}
+
+.pt-67-modified {
+  padding-top: 6.7rem;
+}
+
+.pb-100-modified {
+  padding-bottom: 30px;
+}
+
+.pt-31rem {
+  padding-top: 31rem;
+}
+
+.mb-22rem-modified {
+  margin-bottom: 18rem!important;
+}
+
+.flexvcenter {
+  justify-content: center;
 }
